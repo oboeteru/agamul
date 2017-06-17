@@ -1,0 +1,137 @@
+@media screen and (max-width: 576px) {
+    .navbar.navbar-light>.container {
+        margin: 0;
+    }
+}
+
+.navbar{
+	margin-bottom: 10px;
+}
+
+.nav-item{
+	font-variant: small-caps;	
+}
+
+.nav-item.active{
+	background: #ffffff;
+}
+.nav-item.active .nav-link{
+	color: red;
+}
+
+.nav.navbar-nav>.nav-item>a.nav-link{
+	padding: 8px 15px;
+}
+
+.cm-tiles{
+	margin-top: 66px;
+}
+
+.col-12, .col-6{
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.col-12.col-md-4>.row{
+	margin: 0;
+}
+
+.cm-text-tile{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.4rem;
+	text-transform:uppercase;
+	font-weight: 600;
+	transition: background .1s linear, color .05s linear;
+}
+
+.container .row .col-12.col-md-4 .cm-text-tile:hover{
+	background: #ffffff;
+	color: #ca1a1a;
+}
+
+.cm-text-tile>p{
+	margin: 0;
+	text-align: center;
+}
+
+.col-12.col-md-4:last-child .cm-text-tile:last-child{
+	background: #e9f9ff
+}
+.cm-img-cnt{
+	position: relative;
+}
+
+.cm-img-cnt > img{
+	transition: opacity .3s;
+	position: relative;
+	z-index:2;
+}
+
+.cm-img-cnt p{
+	position: absolute; 
+	left: 50%; 
+	top: 50%; 
+	transform: translate(-50%, -50%); 
+	color: #ffffff;
+	font-size: 1.4rem;
+	text-transform:uppercase;
+	font-weight: 600;
+}
+.cm-img-cnt > img:hover{
+	opacity:0;
+}
+
+.col-12.col-md-4:last-child .cm-text-tile:first-child{
+	background: #ffe6e6;
+}
+
+.cm-footer{
+	height: 120px;
+	background: #f7f7f7;
+	margin-top: 10px;
+}
+
+#cm-scl-btns{
+	position: fixed;
+	right: 0;
+	padding: 0;
+	top: 50%;
+	transform: translateY(-50%)
+}
+
+#cm-scl-btns li{
+	list-style-type: none;
+	margin-right: 5px;
+	color: #ffffff;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+#cm-scl-btns li i{
+	opacity: .7;
+	transition: opacity .3s
+}
+#cm-scl-btns li:hover i{
+	opacity: 1;
+}
+
+#cm-facebook{
+	background: #3B5998;
+}	
+	
+#cm-linkedin{
+	background: #007bb6;
+}
+#cm-google-plus{
+	background: #d34836;
+}
+#cm-whatsapp{
+	background: #34af23
+}
+#cm-envelope{
+	background: #ffd700
+}

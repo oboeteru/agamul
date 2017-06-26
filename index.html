@@ -7,6 +7,7 @@
     <title>Mularczyk</title>
     <meta name="mularczyk" content="mularczyk" />
     <meta name="orkan" content="mularczyk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
@@ -19,84 +20,63 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/custom.css" />
+	<!-- angular js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+	<!-- angular ui bootstrap js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.min.js"></script>
     <!--[if lt IE 9]>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
                 <![endif]-->
   </head>
-  <body>
+  
+  
+  <body ng-app="mularczyk">
+  <div ng-controller="ml">
     <nav class="navbar navbar-light navbar-toggleable-sm bg-faded justify-content-center fixed-top">
       <div class="container">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navmularczyk" aria-controls="navmularczyk" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
         <a class="navbar-brand" href="#">
-        <img src="dist/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" /> Nazwa firmy</a>
-        <div class="navbar-collapse collapse" id="collapsingNavbar3">
-          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Strona domowa</a>
+          <img src="dist/img/logo.png" class="d-inline-block align-top" height="66px" alt="" />
+        </a>
+        <div class="navbar-collapse collapse" id="navmularczyk">
+          <ul class="nav navbar-nav ml-auto w-100 justify-content-end" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" role="tab" href="#domowa">{{dictionary.navHome[num]}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">O nas</a>
+              <a class="nav-link" data-toggle="tab" role="tab" href="#onas">{{dictionary.navAbout[num]}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Usługi</a>
+              <a class="nav-link" data-toggle="tab" role="tab" href="#uslugi">{{dictionary.navServices[num]}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Galeria</a>
+              <a class="nav-link" data-toggle="tab" role="tab" href="#galeria">{{dictionary.navGallery[num]}}</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Kontakt</a>
-            </li>
+			<li class="nav-item" id="cm-flag-cnt">
+			<label><input style="display:none" type="checkbox" ng-change="changeLang()" ng-model="myValue" name="checkbox" value="value"><img class="img-fluid" src="dist/img/lang{{num}}.png" /></label>
+			 
+			</li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container cm-tiles">
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="cm-img-cnt" style="background: #7793ab">
-            <img alt="" id="fst-pic" class="img-fluid" src="dist/img/1.jpg" />
-            <p>zdjęcie</p>
-          </div>
-          <div id="fst-text-tile" class="cm-text-tile">
-            <p>Usługi</p>
-          </div>
-          <div class="cm-img-cnt" style="background: #333333">
-            <img alt="" class="img-fluid" src="dist/img/2.jpg" />
-            <p>zdjęcie</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="cm-img-cnt" style="background: #f4d1cd">
-            <img alt="" class="img-fluid" src="dist/img/4.jpg" />
-            <p>zdjęcie</p>
-          </div>
-          <div class="cm-text-tile">
-            <p>Kontakt</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="row">
-		              <div class="col-6">
-              <div class="cm-text-tile">
-                <p>O nas</p>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="cm-img-cnt" style="background: #d9d8d6">
-                <img alt="" class="img-fluid" src="dist/img/3.jpg" />
-                <p>zdjęcie</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="cm-text-tile">
-            <p>Galeria</p>
-          </div>
-          <div class="cm-text-tile">
-            <p>Czas by wprowadzić twoją wizję w rzeczywistość</p>
-          </div>
-        </div>
-      </div>
+    <div class="tab-content">
+      <div class="tab-pane active" id="domowa" role="tabpanel">
+	  						<cmdomowa></cmdomowa>
+					</div>
+					<div class="tab-pane" id="onas" role="tabpanel">
+						<cmonas></cmonas>
+					</div>
+					<div class="tab-pane" id="uslugi" role="tabpanel">
+						<cmuslugi></cmuslugi>
+					</div>
+					<div class="tab-pane" id="galeria" role="tabpanel">
+						<cmgaleria></cmgaleria>
+					</div>
     </div>
+
     <ul id="cm-scl-btns">
       <li id="cm-facebook">
         <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
@@ -114,7 +94,26 @@
         <i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i>
       </li>
     </ul>
-    <div class="cm-footer"></div>
-    <script src="js/custom.js"></script>
+    <div class="cm-footer">
+		<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6 col-md-4 push-md-3">
+				<p>Rainbow Lemon Design<br>
+				67-100 Nowa Sól<br>
+				Cytrynowa 22</p>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 push-md-3">
+				<p>tel. (68) 333 3 33<br>
+				kom. 333 333 333<br>
+				mail: rainbow lemon@design.com</p>
+			</div>
+			<div class="col-12 cm-cpr">
+				<p>Wszystkie prawa zastrzeżone ©Rainbow Lemon Design 2017</p>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+    <script src="js/custom.js" type="text/javascript"></script>
   </body>
 </html>

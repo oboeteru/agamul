@@ -71,6 +71,11 @@ body{
 }
 .cm-img-cnt{
 	position: relative;
+	flex-shrink: 0;
+}
+
+#cm-row-cnt{
+	flex-shrink: 0;
 }
 
 .cm-img-cnt > img{

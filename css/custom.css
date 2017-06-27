@@ -111,6 +111,12 @@ body{
 	padding-top: 15px;
 }
 
+.cm-footer .container{
+	display: flex;
+	justify-content: space-around;
+	
+}
+
 .cm-footer p{
 	margin-left: 5px;
 }

@@ -250,10 +250,16 @@ transform: translate(-50%, -50%);
 	opacity: .9
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px){
+	.cm-footer .container{
+		flex-direction: column;
+	}
 	body .tab-content{
 		padding-bottom: 320px;
 	}
+}
+
+@media screen and (max-width: 576px) {
     .navbar.navbar-light>.container {
         margin: 0;
     }
